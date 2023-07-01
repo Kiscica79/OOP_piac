@@ -7,21 +7,26 @@ public class Main {
         List<String> lines = FileReader.fileReadHandler("piac.txt");
         List<Termek> piac = new ArrayList<>();
 
-        for (var line : lines) {
+        for (String line : lines) {
             String[] lineAsArray = line.split(";");
-            String nev = lineAsArray[0];
-            String egyseg = lineAsArray[1];
-            int ar = Integer.parseInt(lineAsArray[2]);
-            boolean hatosagiAr = Boolean.parseBoolean(lineAsArray[3]);
-            String kategoria = lineAsArray[4];
 
+            // ha többféle lenne, akkor a példányosítás előtt switch-csel adom hozzá
+            /*
+            Iz iz;
+            switch (lineAsArray[4]) {
+                case "sós" -> iz  = Iz.SOS;
+                case "édes" -> iz = Iz.EDES;
+            }
+             */
             Termek actualPiac = new Termek(lineAsArray[0], lineAsArray[1],
                     Integer.parseInt(lineAsArray[2]), Boolean.parseBoolean(lineAsArray[3]),
-                    lineAsArray[4]);
+                    "sós".equals(lineAsArray[4]) ? Iz.SOS : Iz.EDES);
+                    // iz simán a fenti equals helyett
+
             piac.add(actualPiac);
 
         }
-        for (var actualTermek : piac) {
+        for (Termek actualTermek : piac) {
             System.out.println(actualTermek);
         }
 
@@ -37,8 +42,17 @@ public class Main {
                 System.out.println(actualTermek);
             }
         }
+        /*
         // TODO Mi a legdrágább, és a legolcsóbb?
+        for (var actualTermek : piac) {
+            int legdragabb = actualTermek[0];
+            if (actualTermek.getAr() > legdragabb) {
+                    legdragabb = actualTermek.getAr();
+            }
+            System.out.println(actualTermek);
+        }
 
+         */
 
 
     }

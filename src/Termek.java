@@ -1,11 +1,12 @@
+// úgy is lehetne, hogy class helyett record, és akkor a Termék után vannak felsorolva a fieldek
 public class Termek {
     private String nev;
     private String egyseg;
     private int ar;
     private boolean hatosagiAr;
-    private String kategoria;
+    private Iz kategoria;
 
-    public Termek(String nev, String egyseg, int ar, boolean hatosagiAr, String kategoria) {
+    public Termek(String nev, String egyseg, int ar, boolean hatosagiAr, Iz kategoria) {
         this.nev = nev;
         this.egyseg = egyseg;
         this.ar = ar;
@@ -45,11 +46,22 @@ public class Termek {
         this.hatosagiAr = hatosagiAr;
     }
 
-    public String getKategoria() {
+    public Iz getKategoria() {
         return kategoria;
     }
 
-    public void setKategoria(String kategoria) {
+    public void setKategoria(Iz kategoria) {
         this.kategoria = kategoria;
+    }
+
+    @Override
+    public String toString() {
+        return "Termek{" +
+                "nev='" + nev + '\'' +
+                ", egyseg='" + egyseg + '\'' +
+                ", ar=" + ar +
+                ", hatosagiAr=" + hatosagiAr +
+                ", kategoria=" + kategoria +
+                '}';
     }
 }

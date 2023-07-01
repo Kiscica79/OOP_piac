@@ -8,18 +8,18 @@ public class FileReader {
 
 
     public static List<String> fileReadHandler(String filePath) {
-        List<String> strings = new ArrayList<>();
-        File file = new File(filePath);
+        List<String> lines = new ArrayList<>();
+
         try {
-            Scanner sc = new Scanner(file);
+            Scanner sc = new Scanner(new File(filePath));
             while ((sc.hasNextLine())) {
-                strings.add(sc.nextLine());
+                lines.add(sc.nextLine());
             }
             sc.close();
         } catch (FileNotFoundException e) {
             System.out.println("The file is not found!");
         }
-        return strings;
+        return lines;
     }
 
 
