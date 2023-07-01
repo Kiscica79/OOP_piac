@@ -32,7 +32,11 @@ public class Main {
             }
         }
         // TODO Mekkora a sós és édes sütemények aránya?
-
+        for (var actualTermek : piac) {
+            if (actualTermek.getKategoria().equals("sós")) {
+                System.out.println(actualTermek);
+            }
+        }
         // TODO Mi a legdrágább, és a legolcsóbb?
 
 
