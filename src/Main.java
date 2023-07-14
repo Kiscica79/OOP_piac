@@ -17,7 +17,7 @@ public class Main {
                 case "édes" -> iz = Iz.EDES;
             }
              */
-           Termek actualtermek =  piac.add(new Termek(
+          piac.add(new Termek(
                     lineAsArray[0],
                     lineAsArray[1],
                     Integer.parseInt(lineAsArray[2]),
@@ -61,10 +61,11 @@ public class Main {
             if (actualTermek.ar() < legolcsobb.ar()) {
                 legolcsobb = actualTermek;
             }
+        }
             System.out.println("Ez a termék a legdrágább: " + legdragabb.nev() + " aminek az ára: " +
                     legdragabb.ar());
-            System.out.println("Ez a termék a legolcsóbb:" + legolcsobb.nev() + "aminek az ára: " +
-                    legolcsobb.nev());
+            System.out.println("Ez a termék a legolcsóbb: " + legolcsobb.nev() + " aminek az ára: " +
+                    legolcsobb.ar());
 
 
             // TODO Melyik termék kapható a legtöbb helyen?
@@ -89,7 +90,8 @@ public class Main {
             }
             System.out.println("Legtöbb helyen kapható termék száma: " + maxItem);
             System.out.println("Az elérhető legtöbb hely: " + mostPlace);
+
         }
     }
-}
+
 
