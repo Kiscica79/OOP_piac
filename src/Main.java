@@ -17,16 +17,17 @@ public class Main {
                 case "édes" -> iz = Iz.EDES;
             }
              */
-            Termek actualPiac = new Termek(lineAsArray[0],
+           Termek actualtermek =  piac.add(new Termek(
+                    lineAsArray[0],
                     lineAsArray[1],
                     Integer.parseInt(lineAsArray[2]),
                     Boolean.parseBoolean(lineAsArray[3]),
-                    lineAsArray[4].equals("sós") ? Iz.SOS : Iz.EDES;
+                    lineAsArray[4].equals("sós") ? Iz.SOS : Iz.EDES,
+                    lineAsArray.length > 5 ? List.of(lineAsArray[5]) : new ArrayList<>()
             // iz simán a fenti equals helyett
-
-            piac.add(actualPiac);
-
+            ));
         }
+
         for (Termek actualTermek : piac) {
             System.out.println(actualTermek);
         }
